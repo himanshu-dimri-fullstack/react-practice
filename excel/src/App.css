@@ -354,3 +354,12 @@ td {
 tbody {
   background-color: white;
 }
+
+tbody tr td:hover {
+  background-color: #217346;
+  cursor: pointer;
+}
+
+tbody tr:nth-child(6) td:nth-child(8) {
+  border: 2px solid green
+}

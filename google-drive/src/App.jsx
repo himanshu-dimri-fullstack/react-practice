@@ -1,43 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
 
       <Navbar />
 
-      <div class="main-container">
+      <div className="main-container">
 
         <Sidebar />
 
-        <div class="content">
-          <div class="content-header">
-            <div class="title">My Drive <i class="fa-solid fa-caret-down"></i></div>
-            <div class="view-options">
-              <i class="fa-solid fa-list-ul"></i>
-              <i class="fa-solid fa-grid-view"></i>
-              <i class="fa-solid fa-circle-info"></i>
-            </div>
+        <div className="content">
+          <div className="content-header">
+            <div className="title">My Drive</div>
           </div>
 
-          <div class="filters">
-            <button>Type <i class="fa-solid fa-caret-down"></i></button>
-            <button>People <i class="fa-solid fa-caret-down"></i></button>
-            <button>Modified <i class="fa-solid fa-caret-down"></i></button>
+          <div className="filters">
+            <button>Type</button>
+            <button>People</button>
+            <button>Modified</button>
           </div>
 
-          <table class="file-table">
+          <table className="file-table">
             <thead>
               <tr>
-                <th>Name <i class="fa-solid fa-arrow-up"></i></th>
+                <th>Name</th>
                 <th>Owner</th>
                 <th>Date modified</th>
                 <th>File size</th>
@@ -46,32 +36,172 @@ function App() {
             </thead>
             <tbody>
               <tr>
-                <td><i class="fa-solid fa-folder folder-icon"></i> Classroom</td>
+                <td>ClassNameroom</td>
                 <td>me</td>
                 <td>Jan 29</td>
                 <td>—</td>
-                <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+                <td></td>
               </tr>
               <tr>
-                <td><i class="fa-solid fa-file-zipper zip-icon"></i> ecommerce-breeze.zip</td>
+                <td>ecommerce-breeze.zip</td>
                 <td>me</td>
                 <td>Sep 15, 2023</td>
                 <td>54.7 MB</td>
-                <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+                <td></td>
               </tr>
               <tr>
-                <td><i class="fa-solid fa-file-lines text-icon"></i> EVERYBODY.txt</td>
+                <td>EVERYBODY.txt</td>
                 <td>me</td>
                 <td>Nov 13, 2024</td>
                 <td>501 bytes</td>
-                <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+                <td></td>
               </tr>
               <tr>
-                <td><i class="fa-solid fa-file-pdf pdf-icon"></i> himanshu-dimri-cv.pdf</td>
+                <td>himanshu-dimri-cv.pdf</td>
                 <td>me</td>
                 <td>Apr 16</td>
                 <td>113 KB</td>
-                <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>ClassNameroom</td>
+                <td>me</td>
+                <td>Jan 29</td>
+                <td>—</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>ecommerce-breeze.zip</td>
+                <td>me</td>
+                <td>Sep 15, 2023</td>
+                <td>54.7 MB</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>EVERYBODY.txt</td>
+                <td>me</td>
+                <td>Nov 13, 2024</td>
+                <td>501 bytes</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>himanshu-dimri-cv.pdf</td>
+                <td>me</td>
+                <td>Apr 16</td>
+                <td>113 KB</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>ClassNameroom</td>
+                <td>me</td>
+                <td>Jan 29</td>
+                <td>—</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>ecommerce-breeze.zip</td>
+                <td>me</td>
+                <td>Sep 15, 2023</td>
+                <td>54.7 MB</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>EVERYBODY.txt</td>
+                <td>me</td>
+                <td>Nov 13, 2024</td>
+                <td>501 bytes</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>himanshu-dimri-cv.pdf</td>
+                <td>me</td>
+                <td>Apr 16</td>
+                <td>113 KB</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>ClassNameroom</td>
+                <td>me</td>
+                <td>Jan 29</td>
+                <td>—</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>ecommerce-breeze.zip</td>
+                <td>me</td>
+                <td>Sep 15, 2023</td>
+                <td>54.7 MB</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>EVERYBODY.txt</td>
+                <td>me</td>
+                <td>Nov 13, 2024</td>
+                <td>501 bytes</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>himanshu-dimri-cv.pdf</td>
+                <td>me</td>
+                <td>Apr 16</td>
+                <td>113 KB</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>ClassNameroom</td>
+                <td>me</td>
+                <td>Jan 29</td>
+                <td>—</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>ecommerce-breeze.zip</td>
+                <td>me</td>
+                <td>Sep 15, 2023</td>
+                <td>54.7 MB</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>EVERYBODY.txt</td>
+                <td>me</td>
+                <td>Nov 13, 2024</td>
+                <td>501 bytes</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>himanshu-dimri-cv.pdf</td>
+                <td>me</td>
+                <td>Apr 16</td>
+                <td>113 KB</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>ClassNameroom</td>
+                <td>me</td>
+                <td>Jan 29</td>
+                <td>—</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>ecommerce-breeze.zip</td>
+                <td>me</td>
+                <td>Sep 15, 2023</td>
+                <td>54.7 MB</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>EVERYBODY.txt</td>
+                <td>me</td>
+                <td>Nov 13, 2024</td>
+                <td>501 bytes</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>himanshu-dimri-cv.pdf</td>
+                <td>me</td>
+                <td>Apr 16</td>
+                <td>113 KB</td>
+                <td></td>
               </tr>
             </tbody>
           </table>
