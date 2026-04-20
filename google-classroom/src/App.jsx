@@ -1,6 +1,8 @@
 import './App.css'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
+import { Folder } from "lucide-react";
+import { MoreVertical } from "lucide-react";
 
 function App() {
 
@@ -19,7 +21,12 @@ function App() {
               </div>
             </div>
             <div className='card-content'></div>
-            <div className='card-footer'></div>
+            <div className='card-footer'>
+              <div>
+                <Folder className='icon' size={18} />
+                <MoreVertical size={18} />
+              </div>
+            </div>
           </div>
           <div className='card'>
             <div className='card-head'>
@@ -30,7 +37,12 @@ function App() {
               </div>
             </div>
             <div className='card-content'></div>
-            <div className='card-footer'></div>
+            <div className='card-footer'>
+              <div>
+                <Folder className='icon' size={18} />
+                <MoreVertical size={18} />
+              </div>
+            </div>
           </div>
           <div className='card'>
             <div className='card-head'>
@@ -41,7 +53,12 @@ function App() {
               </div>
             </div>
             <div className='card-content'></div>
-            <div className='card-footer'></div>
+            <div className='card-footer'>
+              <div>
+                <Folder className='icon' size={18} />
+                <MoreVertical size={18} />
+              </div>
+            </div>
           </div>
           <div className='card'>
             <div className='card-head'>
@@ -52,7 +69,12 @@ function App() {
               </div>
             </div>
             <div className='card-content'></div>
-            <div className='card-footer'></div>
+            <div className='card-footer'>
+              <div>
+                <Folder className='icon' size={18} />
+                <MoreVertical size={18} />
+              </div>
+            </div>
           </div>
           <div className='card'>
             <div className='card-head'>
@@ -63,7 +85,12 @@ function App() {
               </div>
             </div>
             <div className='card-content'></div>
-            <div className='card-footer'></div>
+            <div className='card-footer'>
+              <div>
+                <Folder className='icon' size={18} />
+                <MoreVertical size={18} />
+              </div>
+            </div>
           </div>
           <div className='card'>
             <div className='card-head'>
@@ -74,7 +101,12 @@ function App() {
               </div>
             </div>
             <div className='card-content'></div>
-            <div className='card-footer'></div>
+            <div className='card-footer'>
+              <div>
+                <Folder className='icon' size={18} />
+                <MoreVertical size={18} />
+              </div>
+            </div>
           </div>
           <div className='card'>
             <div className='card-head'>
@@ -85,7 +117,12 @@ function App() {
               </div>
             </div>
             <div className='card-content'></div>
-            <div className='card-footer'></div>
+            <div className='card-footer'>
+              <div>
+                <Folder className='icon' size={18} />
+                <MoreVertical size={18} />
+              </div>
+            </div>
           </div>
           <div className='card'>
             <div className='card-head'>
@@ -96,7 +133,12 @@ function App() {
               </div>
             </div>
             <div className='card-content'></div>
-            <div className='card-footer'></div>
+            <div className='card-footer'>
+              <div>
+                <Folder className='icon' size={18} />
+                <MoreVertical size={18} />
+              </div>
+            </div>
           </div>
         </div>
       </div>

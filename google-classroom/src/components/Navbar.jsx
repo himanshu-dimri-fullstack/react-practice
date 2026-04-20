@@ -9,7 +9,7 @@ const Navbar = () => {
             </div>
             <div className="right">
                 <div><Plus /></div>
-                <div className="img"><img src="https://lh3.googleusercontent.com/a/ACg8ocI28aIpfalqDfvPHhN9XBSJW7QtRVaxvLFdVkokRIg9pCg3Ibf1=s288-c-no" /></div>
+                <div className="img"><img src="https://avatars.githubusercontent.com/u/256261357?v=4" /></div>
             </div>
         </div>
     )
