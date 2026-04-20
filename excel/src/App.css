@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+#root {
+  background-color: #f3f3f3;
+}
+
 .navbar-top {
   background-color: #217346;
   padding-right: 16px;
@@ -40,7 +44,7 @@
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
 }
 
 .navbar-top-banner ul {
@@ -48,74 +52,304 @@
   font-size: 14px;
 }
 
-.ribbon {
+.navbar-bottom {
   display: flex;
-  gap: 18px;
-  padding: 10px 14px;
-  background: #f3f3f3;
-  border-bottom: 1px solid #cfcfcf;
-  align-items: flex-start;
-  font-family: sans-serif;
+  gap: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-right: 16px;
+  margin-left: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #eee;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  background-color: white;
 }
 
-.group {
+.clipboard {
+  width: 6%;
+  padding: 8px;
+  border-right: 1px solid #ccc;
+}
+
+.clipboard .top {
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+}
+
+.clipboard .bottom {
+  font-size: 15px;
+  padding-top: 12px;
+}
+
+.clipboard .top .child-2 {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding-right: 14px;
-  border-right: 1px solid #ddd;
-  min-width: 90px;
+  gap: 4px;
 }
 
-.group:last-child {
-  border-right: none;
-}
-
-.row {
+.font .first-row {
   display: flex;
-  gap: 6px;
-  align-items: center;
-  margin-bottom: 4px;
+  gap: 4px;
 }
 
-.row.big {
+.font .first-row select {
+  padding: 4px;
+}
+
+.font .first-row select option {
+  font-size: 14px;
+}
+
+.font .second-row {
+  display: flex;
+  gap: 8px;
+  padding-top: 6px;
+}
+
+.font .second-row .left {
+  display: flex;
+  gap: 8px;
+  border-right: 1px solid #ccc;
+  padding-right: 12px;
+  padding-left: 12px
+}
+
+.font .second-row .right {
+  display: flex;
+  gap: 8px;
+}
+
+.font .third-row {
+  display: flex;
+  gap: 16px;
+  /* justify-content: center; */
+  padding-top: 6px;
+  padding-left: 12px
+}
+
+.font .third-row .left {
+  border-bottom: 4px solid yellow;
+}
+
+.font .third-row .right {
+  border-bottom: 4px solid red;
+}
+
+.font .bottom {
+  font-size: 15px;
+  padding-top: 7px;
+  text-align: center;
+}
+
+.font {
+  border-right: 1px solid #ccc;
+  width: 13%;
+}
+
+.alignment div {
+  display: flex;
+  gap: 8px;
+}
+
+.alignment div.row {
+  padding-top: 10px
+}
+
+.alignment .bottom {
+  font-size: 15px;
+  padding-top: 12px;
   justify-content: center;
-  margin-bottom: 6px;
 }
 
-.group span {
-  font-size: 10px;
-  color: #555;
-  margin-top: 3px;
+.alignment {
+  width: 8%;
+  border-right: 1px solid #ccc;
 }
 
-/* Inputs */
-select,
-input {
+.number select {
+  padding: 4px;
+}
+
+.number select option {
+  font-size: 14px;
+}
+
+.number .row {
+  display: flex;
+  gap: 12px;
+  padding-top: 6px;
+}
+
+.number .row .percent {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.number .row .comma {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: -20px;
+}
+
+.number .bottom {
+  font-size: 15px;
+  padding-top: 32px;
+  text-align: center;
+}
+
+.number {
+  border-right: 1px solid #ccc;
+  width: 7%;
+}
+
+.styles div {
+  font-size: 15px;
+
+}
+
+.styles div.row {
+  padding-top: 6px;
+}
+
+.styles .bottom {
+  font-size: 15px;
+  padding-top: 28px;
+  text-align: center;
+}
+
+.styles {
+
+  border-right: 1px solid #ccc;
+  width: 26%;
+}
+
+.styles div.top {
+  display: flex;
+  gap: 16px;
+}
+
+.styles .top .row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.styles .top .row div {
+  text-align: center;
+}
+
+
+.cell div {
+  font-size: 16px;
+}
+
+.cell div.row {
+  /* text-align: center; */
+  padding-top: 6px;
+}
+
+.cell div span {
+  padding-left: 5px;
+}
+
+.cell .bottom {
+  font-size: 15px;
+  padding-top: 16px;
+  text-align: center;
+}
+
+.cell {
+  border-right: 1px solid #ccc;
+  width: 7%;
+}
+
+.editing .top {
+  font-size: 15px;
+  padding-top: 16px;
+  display: flex;
+  gap: 12px;
+}
+
+.editing {
+  border-right: 1px solid #ccc;
+  width: 8%;
+}
+
+.editing .top .col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px
+}
+
+.editing .bottom {
+  font-size: 15px;
+  padding-top: 18px;
+  text-align: center;
+}
+
+.add-ins {
+  border-right: 1px solid #ccc;
+  width: 5%;
+}
+
+.add-ins div {
+  text-align: center;
+}
+
+.add-ins .bottom {
+  font-size: 15px;
+  padding-top: 48px;
+  text-align: center;
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 100vw;
+  table-layout: fixed;
   font-size: 12px;
-  padding: 2px 4px;
-  border: 1px solid #cfcfcf;
-  border-radius: 2px;
-  background: white;
 }
 
-/* Icons */
-.row svg {
-  cursor: pointer;
-  padding: 3px;
-  border-radius: 3px;
-  transition: 0.15s;
+th,
+td {
+  border: 1px solid #dcdcdc;
+  height: 22px;
+  padding: 0;
 }
 
-.row svg:hover {
-  background: #e4e4e4;
+thead th {
+  background: #f3f3f3;
+  font-weight: 500;
+  text-align: center;
+  width: 80px;
 }
 
-/* Style preview box */
-.box {
-  width: 60px;
-  height: 40px;
-  background: linear-gradient(to bottom, #ffffff, #e6e6e6);
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.row-header {
+  width: 40px;
+  background: #f3f3f3;
+  text-align: center;
+}
+
+.corner {
+  width: 40px;
+  background: #f3f3f3;
+}
+
+td {
+  width: 80px;
+  text-align: left;
+  padding-left: 4px;
+}
+
+.table-wrapper {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+tbody {
+  background-color: white;
 }
