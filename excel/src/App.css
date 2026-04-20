@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #root {
@@ -81,7 +82,7 @@
 
 .clipboard .bottom {
   font-size: 15px;
-  padding-top: 12px;
+  padding-top: 16px;
 }
 
 .clipboard .top .child-2 {
@@ -160,7 +161,7 @@
 
 .alignment .bottom {
   font-size: 15px;
-  padding-top: 12px;
+  padding-top: 14px;
   justify-content: center;
 }
 
@@ -196,7 +197,7 @@
 
 .number .bottom {
   font-size: 15px;
-  padding-top: 32px;
+  padding-top: 30px;
   text-align: center;
 }
 
@@ -223,7 +224,7 @@
 .styles {
 
   border-right: 1px solid #ccc;
-  width: 26%;
+  width: 28%;
 }
 
 .styles div.top {
@@ -301,7 +302,7 @@
 
 .add-ins .bottom {
   font-size: 15px;
-  padding-top: 48px;
+  padding-top: 50px;
   text-align: center;
 }
 
