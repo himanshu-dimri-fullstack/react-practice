@@ -9,7 +9,7 @@ import { MdExpandMore } from "react-icons/md";
 
 const Sidebar = () => {
     return (
-        <div className='w-[20%] mt-5'>
+        <div className='w-[20%] h-[70vh] overflow-y-auto mt-5'>
             <div className="flex gap-4 justify-center mx-5 py-3 bg-[#c2e7ff] w-35 border rounded-lg
              border-[#c2e7ff] cursor-pointer shadow-[0_1px_2px_0_rgba(0,0,0,0),0_1px_3px_1px_rgba(0,0,0,0)]
              hover:shadow-[0_1px_2px_0_var(--tw-shadow-color,rgba(0,0,0,0.1)),0_1px_3px_1px_var(--tw-shadow-color,rgba(0,0,0,0.25))]">
@@ -20,6 +20,7 @@ const Sidebar = () => {
                     <span className="text-md font-semibold text-[#001d35]">Compose</span>
                 </div>
             </div>
+
             <div className="mt-4">
                 <div className="flex gap-4 w-[80%] py-1 pl-6 bg-[#c9ddff] rounded-r-2xl cursor-pointer">
                     <div>
@@ -78,6 +79,7 @@ const Sidebar = () => {
                     </div>
                 </div>
             </div>
+
         </div>
     )
 }

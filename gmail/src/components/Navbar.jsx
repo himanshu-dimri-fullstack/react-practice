@@ -4,7 +4,7 @@ import { IoMdSettings } from "react-icons/io";
 
 const Navbar = () => {
     return (
-        <div className="px-6 h-20 flex items-center justify-between">
+        <div className="px-6 h-[10vh] flex items-center justify-between">
             <div className="flex gap-4">
                 <div>
                     <FaAlignJustify className="text-xl mt-2" />
