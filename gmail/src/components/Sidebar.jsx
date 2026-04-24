@@ -6,13 +6,16 @@ import { TbMessage2Check } from "react-icons/tb";
 import { RiDraftLine } from "react-icons/ri";
 import { LuShoppingBag } from "react-icons/lu";
 import { MdExpandMore } from "react-icons/md";
+import { IoMdSettings } from "react-icons/io";
+import { IoMdAdd } from "react-icons/io";
+
+
 
 const Sidebar = () => {
     return (
         <div className='w-[20%] h-[70vh] overflow-y-auto mt-5'>
             <div className="flex gap-4 justify-center mx-5 py-3 bg-[#c2e7ff] w-35 border rounded-lg
-             border-[#c2e7ff] cursor-pointer shadow-[0_1px_2px_0_rgba(0,0,0,0),0_1px_3px_1px_rgba(0,0,0,0)]
-             hover:shadow-[0_1px_2px_0_var(--tw-shadow-color,rgba(0,0,0,0.1)),0_1px_3px_1px_var(--tw-shadow-color,rgba(0,0,0,0.25))]">
+             border-[#c2e7ff] cursor-pointer shadow hover:shadow-amber-50">
                 <div>
                     <IoPencil className="text-lg text-[#001d35] mt-1" />
                 </div>
@@ -77,6 +80,16 @@ const Sidebar = () => {
                     <div>
                         <span className="text-md">More</span>
                     </div>
+                </div>
+
+                <div className="flex justify-between w-[80%] mt-5 py-1 pl-6 rounded-r-2xl cursor-pointer">
+                    <div>
+                        <span className="text-lg font-semibold">Labels</span>
+                    </div>
+                    <div>
+                        <IoMdAdd className="text-lg mt-2" />
+                    </div>
+
                 </div>
             </div>
 
