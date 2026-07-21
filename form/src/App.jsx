@@ -15,11 +15,23 @@ const App = () => {
   })
 
   const changeHandler = (e) => {
+    // console.log(e.target.files[0].name);
     const { name, value, type, checked } = e.target;
-    setForm({
-      ...form,
-      [name]: value
-    })
+
+    if (type == "checkbox") {
+      setForm(
+        {
+          ...form,
+          [name]: checked ? [...form[name], value] : form[name].filter((item) => item !== value)
+        }
+      )
+    }
+    else {
+      setForm({
+        ...form,
+        [name]: value
+      })
+    }
   }
 
   const handleSubmit = (e) => {
@@ -47,15 +59,15 @@ const App = () => {
 
         <div className="flex justify-between mb-3 gap-2">
           <div>
-            <label className="text-sm" htmlFor="gender">Gender:</label><br />
+            <label className="text-sm">Gender:</label><br />
             <input onChange={changeHandler} type="radio" name="gender" id="male" value="male" /><label className="text-sm ml-2 mr-4" htmlFor="male">Male</label>
             <input onChange={changeHandler} type="radio" name="gender" id="female" value="female" /><label className="text-sm ml-2 mr-4" htmlFor="female">Female</label>
           </div>
           <div>
             <label className="text-sm">Hobbies:</label><br />
-            <input onChange={changeHandler} name="hobbies" id="cricket" type="checkbox" value="cricket" /><label className="text-sm ml-2 mr-4" htmlFor="cricket">Cricket</label>
-            <input onChange={changeHandler} name="hobbies" id="music" type="checkbox" value="music" /><label className="text-sm ml-2 mr-4" htmlFor="music">Music</label>
-            <input onChange={changeHandler} name="hobbies" id="movie" type="checkbox" value="movie" /><label className="text-sm ml-2 mr-4" htmlFor="movie">Movie</label>
+            <input onChange={changeHandler} checked={form.hobbies.includes("cricket")} name="hobbies" id="cricket" type="checkbox" value="cricket" /><label className="text-sm ml-2 mr-4" htmlFor="cricket">Cricket</label>
+            <input onChange={changeHandler} checked={form.hobbies.includes("music")} name="hobbies" id="music" type="checkbox" value="music" /><label className="text-sm ml-2 mr-4" htmlFor="music">Music</label>
+            <input onChange={changeHandler} checked={form.hobbies.includes("movie")} name="hobbies" id="movie" type="checkbox" value="movie" /><label className="text-sm ml-2 mr-4" htmlFor="movie">Movie</label>
           </div>
         </div>
         <div className="flex justify-between mb-3 gap-2">
