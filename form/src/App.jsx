@@ -14,8 +14,13 @@ const App = () => {
     profile: ""
   })
 
+  const [error, setError] = useState({
+    nameError: "",
+    emailError: "",
+    passwordError: ""
+  });
+
   const changeHandler = (e) => {
-    // console.log(e.target.files[0].name);
     const { name, value, type, checked } = e.target;
 
     if (type == "checkbox") {
@@ -36,32 +41,64 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (form.name == "") {
+      setError({
+        nameError: "Name is required"
+      });
+      return;
+    }
+    else if (form.email == "") {
+      setError({
+        emailError: "Email is required"
+      });
+      return;
+    }
+    else if (form.password == "") {
+      setError({
+        passwordError: "Password is required"
+      });
+      return;
+    }
+    setError({});
+    setForm({
+      name: "",
+      email: "",
+      password: "",
+      gender: "",
+      hobbies: [],
+      phone: "",
+      city: "",
+      bio: "",
+      dob: "",
+      profile: ""
+    });
     console.log(form);
   }
-
-
 
   return (
     <div className="flex py-10 justify-center w-screen bg-blue-100">
       <form onSubmit={handleSubmit} className="sm:w-[40%] w-[60%] bg-white rounded-xl shadow-xl p-8">
         <div className="mb-3">
           <label className="text-sm" htmlFor="name">Name</label><br />
-          <input onChange={changeHandler} className="focus:bg-blue-100 text-sm w-full border border-blue-300 rounded-lg outline-none px-2 py-1 mt-2" name="name" id="name" type="text" />
+          <input onChange={changeHandler} className={`focus:bg-blue-100 text-sm w-full border ${error.nameError ? "border-red-300" : "border-blue-300"} rounded-lg outline-none px-2 py-1 mt-2`} value={form.name} name="name" id="name" type="text" />
+          {error.nameError ? <p className="text-red-500 text-sm mt-2">{error.nameError}</p> : <></>}
         </div>
         <div className="mb-3">
           <label className="text-sm" htmlFor="email">Email</label><br />
-          <input onChange={changeHandler} className="focus:bg-blue-100 text-sm w-full border border-blue-300 rounded-lg outline-none px-2 py-1 mt-2" name="email" id="email" type="email" />
+          <input onChange={changeHandler} className={`focus:bg-blue-100 text-sm w-full border ${error.emailError ? "border-red-300" : "border-blue-300"} rounded-lg outline-none px-2 py-1 mt-2`} value={form.email} name="email" id="email" type="email" />
+          {error.emailError ? <p className="text-red-500 text-sm mt-2">{error.emailError}</p> : <></>}
         </div>
         <div className="mb-3">
           <label className="text-sm" htmlFor="password">Password</label><br />
-          <input onChange={changeHandler} className="focus:bg-blue-100 text-sm border w-full border-blue-300 rounded-lg outline-none px-2 py-1 mt-2" name="password" id="password" type="password" />
+          <input onChange={changeHandler} className={`focus:bg-blue-100 text-sm w-full border ${error.passwordError ? "border-red-300" : "border-blue-300"} rounded-lg outline-none px-2 py-1 mt-2`} value={form.password} name="password" id="password" type="password" />
+          {error.passwordError ? <p className="text-red-500 text-sm mt-2">{error.passwordError}</p> : <></>}
         </div>
 
         <div className="flex justify-between mb-3 gap-2">
           <div>
             <label className="text-sm">Gender:</label><br />
-            <input onChange={changeHandler} type="radio" name="gender" id="male" value="male" /><label className="text-sm ml-2 mr-4" htmlFor="male">Male</label>
-            <input onChange={changeHandler} type="radio" name="gender" id="female" value="female" /><label className="text-sm ml-2 mr-4" htmlFor="female">Female</label>
+            <input onChange={changeHandler} checked={form.gender === "male"} type="radio" name="gender" id="male" value="male" /><label className="text-sm ml-2 mr-4" htmlFor="male">Male</label>
+            <input onChange={changeHandler} checked={form.gender === "female"} type="radio" name="gender" id="female" value="female" /><label className="text-sm ml-2 mr-4" htmlFor="female">Female</label>
           </div>
           <div>
             <label className="text-sm">Hobbies:</label><br />
@@ -73,29 +110,29 @@ const App = () => {
         <div className="flex justify-between mb-3 gap-2">
           <div>
             <label className="text-sm" htmlFor="phone">Phone Number</label><br />
-            <input onChange={changeHandler} className="focus:bg-blue-100 text-sm border w-full border-blue-300 rounded-lg outline-none px-2 py-1 mt-2" name="phone" id="phone" type="text" />
+            <input onChange={changeHandler} value={form.phone} className="focus:bg-blue-100 text-sm border w-full border-blue-300 rounded-lg outline-none px-2 py-1 mt-2" name="phone" id="phone" type="text" />
           </div>
           <div>
             <label className="text-sm" htmlFor="city">City</label><br />
-            <input onChange={changeHandler} className="focus:bg-blue-100 text-sm border w-full border-blue-300 rounded-lg outline-none px-2 py-1 mt-2" name="city" id="city" type="text" />
+            <input onChange={changeHandler} value={form.city} className="focus:bg-blue-100 text-sm border w-full border-blue-300 rounded-lg outline-none px-2 py-1 mt-2" name="city" id="city" type="text" />
           </div>
         </div>
 
         <div className="mb-3">
           <label className="text-sm" htmlFor="city">Bio</label><br />
-          <textarea onChange={changeHandler} className="focus:bg-blue-100 text-sm border w-full border-blue-300 rounded-lg outline-none px-2 py-1 mt-2" name="bio" id="bio"></textarea>
+          <textarea onChange={changeHandler} value={form.bio} className="focus:bg-blue-100 text-sm border w-full border-blue-300 rounded-lg outline-none px-2 py-1 mt-2" name="bio" id="bio"></textarea>
         </div>
 
         <div className="mb-3">
           <label className="text-sm" htmlFor="dob">Date of Birth</label><br />
-          <input onChange={changeHandler} className="focus:bg-blue-100 text-sm border w-full border-blue-300 rounded-lg outline-none px-2 py-1 mt-2" name="dob" id="dob" type="date" />
+          <input onChange={changeHandler} value={form.dob} className="focus:bg-blue-100 text-sm border w-full border-blue-300 rounded-lg outline-none px-2 py-1 mt-2" name="dob" id="dob" type="date" />
         </div>
         <div className="mb-3">
           <label className="text-sm" htmlFor="profile">Profile Image</label><br />
-          <input onChange={changeHandler} className="focus:bg-blue-100 text-sm border w-full border-blue-300 rounded-lg outline-none px-2 py-1 mt-2" name="profile" id="profile" type="file" />
+          <input onChange={changeHandler} value={form.profile} className="focus:bg-blue-100 text-sm border w-full border-blue-300 rounded-lg outline-none px-2 py-1 mt-2" name="profile" id="profile" type="file" />
         </div>
         <div className="mt-6 text-center">
-          <button type="submit" className="focus:bg-blue-100 border border-blue-500 bg-blue-500 text-lg text-white px-4 py-1 rounded">Submit</button>
+          <button type="submit" className="border border-blue-500 bg-blue-500 text-lg text-white px-4 py-1 rounded">Submit</button>
         </div>
       </form>
     </div>
