@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
 
-const Data = ({ data }) => {
+const Data = () => {
 
+    let data = JSON.parse(localStorage.getItem("key")) || [];
+    console.log("data:", data);
     return (
         <>
             <div>
                 {
-                    data.map((item) => {
+                    data.map((item, i) => {
                         return (
-                            <div>
+                            <div key={i}>
                                 <p>{item.name}</p>
                                 <p>{item.email}</p>
                             </div>

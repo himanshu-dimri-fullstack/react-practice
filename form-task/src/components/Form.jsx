@@ -1,18 +1,13 @@
 import React, { useState } from 'react'
 import Data from './Data';
 
-
-
 const Form = () => {
     const [form, setForm] = useState({
         name: "",
         email: "",
         password: ""
     })
-    const [data, setData] = useState([]);
-
     const handleChange = (e) => {
-
         const { name, value } = e.target;
         setForm({
             ...form,
@@ -20,19 +15,16 @@ const Form = () => {
         })
     }
 
+    const [data, setData] = useState([]);
     const handleSubmit = (e) => {
         e.preventDefault();
-        // let key = form.name;
-        localStorage.setItem("key", JSON.stringify(form));
-
-        setData([
-            ...data,
-            JSON.parse(localStorage.getItem("key"))
-        ])
+        let updatedData = [...data, form];
+        setData(updatedData);
+        localStorage.setItem("key", JSON.stringify(updatedData));
     }
+
     return (
         <>
-
             <div className='w-screen flex justify-center items-center p-10 bg-blue-100'>
                 <form onSubmit={handleSubmit} className='w-[40%] bg-white p-6 rounded-2xl shadow-xl'>
                     <div className='mb-3'>
@@ -52,10 +44,8 @@ const Form = () => {
                     </div>
                 </form>
             </div>
-            <Data data={data} />
+            <Data />
         </>
-
-
     )
 }
 
