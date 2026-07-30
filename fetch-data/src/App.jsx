@@ -42,13 +42,11 @@ const App = () => {
 
   return (
     <>
-
       <div className='bg-[#f3e3e3]'>
         <Navbar setFilter={setFilter} handleChange={handleChange} />
         <Dashboard data={data} sortData={sortData} fetchData={fetchData} clearData={clearData} filterData={filterData} />
         <Footer />
       </div>
-
     </>
   )
 }
