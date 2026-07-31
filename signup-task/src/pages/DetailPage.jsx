@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { useLocation, useParams } from 'react-router-dom'
 
 const DetailPage = () => {
+    const location = useLocation();
+    console.log(location)
     const { id } = useParams();
     const [data, setData] = useState({})
     const [loading, setLoading] = useState(true);
@@ -15,7 +17,6 @@ const DetailPage = () => {
         catch (err) {
             console.log(err)
         }
-
     }
     useEffect(() => {
         fetchUser();

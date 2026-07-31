@@ -40,7 +40,6 @@ const Homepage = () => {
                     })
                 }
             </div>
-
         </>
     )
 }
