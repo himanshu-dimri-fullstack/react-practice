@@ -13,7 +13,6 @@ const Data = ({ data }) => {
                     )
                 })
             }
-
         </div>
     )
 }
