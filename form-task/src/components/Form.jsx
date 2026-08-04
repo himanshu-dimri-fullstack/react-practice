@@ -21,6 +21,12 @@ const Form = () => {
         let updatedData = [...data, form];
         setData(updatedData);
         localStorage.setItem("key", JSON.stringify(updatedData));
+        setForm({
+            name: "",
+            email: "",
+            password: ""
+        })
+
     }
 
     return (
