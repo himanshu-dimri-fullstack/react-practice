@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
@@ -64,6 +64,10 @@ const Login = () => {
                         {
                             error.passwordErr ? <p className='text-red-500 mt-1'>{error.passwordErr}</p> : <></>
                         }
+                    </div>
+                    <div>
+                        <Link to="/confirm-email" className='text-blue-500 font-semibold text-sm'>Forget Password?</Link>
+
                     </div>
                     <div className='text-center'>
                         <button type='submit' className='border border-blue-500 bg-blue-500 text-white

@@ -22,7 +22,7 @@ const Homepage = () => {
 
     if (loading) {
         return (
-            <div className='flex justify-center items-center h-[80vh] bg-blue-100'>
+            <div key={"abc"} className='flex justify-center items-center h-[80vh] bg-blue-100'>
                 <h2 className='text-xl'>Loading...</h2>
             </div>
         )
@@ -33,9 +33,7 @@ const Homepage = () => {
                 {
                     data.map((item) => {
                         return (
-                            <>
-                                <Card key={item.id} data={item} />
-                            </>
+                            <Card key={item.id} data={item} />
                         )
                     })
                 }

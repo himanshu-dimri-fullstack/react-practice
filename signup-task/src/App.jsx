@@ -7,6 +7,9 @@ import Dashboard from './pages/Dashboard'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import DetailPage from './pages/DetailPage'
+import ConfirmEmail from './components/forget-password/ConfirmEmail'
+import Otp from './components/forget-password/Otp'
+import ResetPassword from './components/forget-password/ResetPassword'
 
 const App = () => {
   return (
@@ -18,7 +21,12 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/user/:id" element={<DetailPage />} />
+        <Route path="/confirm-email" element={<ConfirmEmail />} />
+        <Route path="/otp" element={<Otp />} />
+        <Route path="/reset-page" element={<ResetPassword />} />
+
       </Routes>
+
       <Footer />
     </>
   )
