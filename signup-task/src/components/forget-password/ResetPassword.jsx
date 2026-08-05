@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const ResetPassword = () => {
+    const location = useLocation();
+    const navigate = useNavigate();
+    const email = location.state;
     const [form, setForm] = useState({
         password: "",
         confirmPassword: ""
@@ -15,7 +19,6 @@ const ResetPassword = () => {
             [name]: value
         })
     }
-
 
     console.log(form)
 
@@ -36,6 +39,24 @@ const ResetPassword = () => {
             setError("password are not same");
             return
         }
+
+        let data = JSON.parse(localStorage.getItem("key"));
+
+        let fetchedData = data.find((item) => item.email == email);
+        fetchedData.password = form.password;
+
+        let transformed = data.map((item) => {
+            if (item.email == email) {
+                return item = fetchedData;
+            }
+            else {
+                return item;
+            }
+        })
+        localStorage.setItem("key", JSON.stringify(transformed));
+
+        navigate("/login")
+
 
     }
     return (

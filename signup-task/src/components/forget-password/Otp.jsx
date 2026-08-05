@@ -12,11 +12,10 @@ const Otp = () => {
 
     const navigate = useNavigate();
 
-
     const generateOtp = () => {
         // e.preventDefault()
         let otp = Math.floor(1000 + Math.random() * 9000);
-        setOtp(otp);
+
         let data = JSON.parse(localStorage.getItem("key"));
 
         let fetchedData = data.find((item) => item.email == email);
@@ -25,6 +24,9 @@ const Otp = () => {
         let transformed = data.map((item) => {
             if (item.email == email) {
                 return item = fetchedData
+            }
+            else {
+                return item;
             }
         })
         localStorage.setItem("key", JSON.stringify(transformed));
@@ -36,34 +38,35 @@ const Otp = () => {
 
     useEffect(() => {
         if (time <= 0) {
-            return;
+            return
         }
         let timer = setInterval(() => {
             setTime((prev) => prev - 1);
         }, 1000)
-
         return () => clearInterval(timer);
-        console.log("hello")
     }, [time])
 
+    const handleChange = (e) => {
+        setOtp(e.target.value);
+    }
     const handleSubmit = (e) => {
         e.preventDefault();
         let data = JSON.parse(localStorage.getItem("key"));
 
         let fetchedData = data.find((item) => item.otp == otp);
+        console.log(fetchedData)
         if (fetchedData) {
-            navigate("/reset-page")
+            navigate("/reset-page", { state: email })
         }
         else {
             setError("Otp is wrong")
         }
     }
 
-
     return (
         <div className='flex justify-center items-center min-h-[80vh] bg-blue-100'>
             <form onSubmit={handleSubmit} className='w-[50%] bg-white shadow-xl p-4 rounded'>
-                <input type="text" placeholder='Enter OTP' name="otp"
+                <input onChange={handleChange} type="text" placeholder='Enter OTP' name="otp"
                     className='mt-2 border border-blue-500 outline-none w-full rounded px-1' />
                 <p className='text-red-500 mt-1'>{error}</p>
                 <div className='flex items-center'>
@@ -78,7 +81,6 @@ const Otp = () => {
                             :
                             <p className='text-green-500 font-semibold ml-2'>{time}s</p>
                     }
-
                 </div>
             </form>
         </div>
