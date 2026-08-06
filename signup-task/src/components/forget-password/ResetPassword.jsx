@@ -20,7 +20,7 @@ const ResetPassword = () => {
         })
     }
 
-    console.log(form)
+    // console.log(form)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -66,7 +66,7 @@ const ResetPassword = () => {
                 <input type="password" onChange={handleChange} name='password' placeholder='password' className='w-full border rounded px-2 py-1 outline-none' />
                 <input type="password" onChange={handleChange} name='confirmPassword' placeholder='confirm password' className='w-full border rounded px-2 py-1 mt-3 outline-none' />
                 {
-                    error ? <p className='text-red-500'>{error}</p>
+                    error ? <p className='text-red-500 text-sm'>{error}</p>
                         :
                         <></>
                 }
