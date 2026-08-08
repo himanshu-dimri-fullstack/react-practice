@@ -5,11 +5,18 @@ const Location = ({ data }) => {
     const [state, setState] = useState([])
     const [city, setCity] = useState([])
 
+    const [selectedCountry, setSelectedCountry] = useState("")
+    const [selectedState, setSelectedState] = useState("")
+    const [selectedCity, setSelectedCity] = useState("")
+
     const handleChange = (e) => {
-        setState([])
-        setCity([])
-        // console.log(e.target.value);
+        // setState([])
+        // setCity([])
         let c = e.target.value;
+
+        setSelectedCountry("c")
+        setSelectedState("")
+        setSelectedCity("")
 
         let fetchedData = data.find((item) => item.country == c);
 
@@ -18,21 +25,16 @@ const Location = ({ data }) => {
 
     const handleState = (e) => {
         let c = e.target.value;
+        setSelectedState("c")
 
         let fetchedData = state.find((item) => item.state == c);
-
-        // console.log("data", fetchedData);
 
         setCity(fetchedData.cities)
     }
 
-
-
-
-
     return (
         <div>
-            <select onChange={handleChange}>
+            <select onChange={handleChange} value={selectedCountry}>
                 <option>select country</option>
                 {
 
@@ -46,26 +48,26 @@ const Location = ({ data }) => {
                 }
             </select>
 
-            <select onChange={handleState}>
+            <select onChange={handleState} value={selectedState}>
                 <option>select state</option>
                 {
                     state.map((item) => {
                         return (
                             <>
-                                <option value={item.state}>{item.state}</option>
+                                <option>{item.state}</option>
                             </>
                         )
                     })
                 }
             </select>
 
-            <select>
+            <select value={selectedCity}>
                 <option>select city</option>
                 {
                     city.map((item) => {
                         return (
                             <>
-                                <option value={item}>{item}</option>
+                                <option>{item}</option>
                             </>
                         )
                     })
