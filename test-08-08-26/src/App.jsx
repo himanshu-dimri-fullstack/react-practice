@@ -19,9 +19,7 @@ const App = () => {
   }
 
   useEffect(() => {
-
     fetchData()
-
   }, [])
 
   const handleShow1 = () => {
