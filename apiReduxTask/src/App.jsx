@@ -3,12 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { userFetch } from "./redux/userSlice"
 
 const App = () => {
-
   const data = useSelector((state) => state.user.data);
-  console.log(data);
-
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(userFetch());
   }, [])
